@@ -94,7 +94,7 @@
 
 // Called automatically with the response of the YouTube API request.
 function onSearchResponse(response) {
-    displayMessage(response);
+    console.log(response);
 }
 
   // Call the Data API to retrieve information about the currently
