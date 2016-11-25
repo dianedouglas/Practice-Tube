@@ -1,10 +1,19 @@
 var searchTerm;
-function search(query) {
+function search(query, pageToken) {
     // Use the JavaScript client library to create a search.list() API call.
-    var request = gapi.client.youtube.search.list({
-        part: 'snippet',
-        q: query
-    });
+    if(pageToken) {    
+      var request = gapi.client.youtube.search.list({
+          part: 'snippet',
+          q: query,
+          pageToken: pageToken
+      });
+    }else {    
+      var request = gapi.client.youtube.search.list({
+          part: 'snippet',
+          q: query
+      });
+    }
+
     
     // Send the request to the API server,
     // and invoke onSearchRepsonse() with the response.
@@ -30,8 +39,14 @@ function onSearchResponse(response) {
         });
       };
     });
-    debugger;
-    // if (response.) {};
+    $('#pager').empty();
+    if (response.nextPageToken) {
+      $('#pager').append('<a class="next" id="' + response.nextPageToken + '">Next</a>')
+    };
+    $('.next').click(function(){
+      var pageToken = $(this).attr('id');
+      search(searchTerm, pageToken);
+    })
 }
 
 (function() {
