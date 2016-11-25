@@ -315,7 +315,7 @@ function onSearchResponse(response) {
     $('#message').hide();
   }
 
-  $('#search').submit(function(){
+  $('#search').click(function(){
     event.preventDefault();
     searchTerm = $('#find-videos').val();
     console.log(searchTerm);
