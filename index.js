@@ -13,8 +13,23 @@ function search(query) {
 
 // Called automatically with the response of the YouTube API request.
 function onSearchResponse(response) {
-    debugger;
-    // $('#results').append()
+    $('#results').empty();
+    response.items.forEach(function(video){
+      if (video.id.videoId) { //don't show channels etc.
+        console.log(video.id.videoId);
+        console.log(video.snippet.title);
+        var currentVideoId = video.id.videoId;
+        var url = video.snippet.thumbnails.default.url;
+        var imgTag = '<img src="' + url +'">';
+        var imgPlusDivWithId = '<div class="videoThumb" id="' + currentVideoId + '">' + imgTag + '</div>'
+        console.log(imgPlusDivWithId);
+        $('#results').append(imgPlusDivWithId);
+        $('.videoThumb').click(function(){
+          var videoIdToPlay = $(this).attr('id');
+          console.log(videoIdToPlay);
+        });
+      };
+    });
 }
 
 (function() {
