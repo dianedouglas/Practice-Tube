@@ -74,9 +74,11 @@
     }
     function resumePlayback() {
       var duration = player.getDuration();
+      var currentTime = player.getCurrentTime();
       player.cueVideoById({'videoId': videoId,
-        'startSeconds': 0,
+        'startSeconds': currentTime,
         'endSeconds': duration});
+      player.playVideo();
     }
     function onPlayerReady(event) {
       document.getElementById('existing-iframe-example').style.borderColor = '#FF6D00';
