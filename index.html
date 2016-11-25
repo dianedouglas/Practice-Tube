@@ -32,7 +32,8 @@
   <button onclick="back20()">Back 20 Seconds</button>
   <button onclick="back30()">Back 30 Seconds</button>
   <button onclick="back60()">Back 60 Seconds</button>
-  <select id="playback-speeds" onchange="changePlaybackSpeed()"></select>
+  <button onclick="halfSpeed()">Slow The F*ck Down! (AKA Half Speed)</button>
+  <button onclick="normalSpeed()">OK I got it! Normal Speed</button>
   <input id="find-videos" type="text">
   <button id="search" type="submit">Go</button>
   <div id="results"></div>
@@ -109,7 +110,7 @@
     function onPlayerReady(event) {
       document.getElementById('existing-iframe-example').style.borderColor = '#FF6D00';
       console.log(player.getAvailablePlaybackRates());
-      setupPlaybackSpeedOptions();
+      // setupPlaybackSpeedOptions();
     }
     function changeBorderColor(playerStatus) {
       var color;
@@ -137,21 +138,27 @@
       };
       if (event.data == 5) {
         console.log(player.getAvailablePlaybackRates());
-        setupPlaybackSpeedOptions();
+        // setupPlaybackSpeedOptions();
       }
     }
-    function setupPlaybackSpeedOptions() {
-      var options = player.getAvailablePlaybackRates();
-      var menu = $('#playback-speeds').empty();
-      options.forEach(function(speed){
-        menu.append($('<option />').val(speed).text(speed));
-      });
+    // function setupPlaybackSpeedOptions() {
+    //   var options = player.getAvailablePlaybackRates();
+    //   var menu = $('#playback-speeds').empty();
+    //   options.forEach(function(speed){
+    //     menu.append($('<option />').val(speed).text(speed));
+    //   });
+    // }
+    function halfSpeed(){
+      player.setPlaybackRate('.5');
     }
-    function changePlaybackSpeed() {
-      var menu = $('#playback-speeds');
-      player.setPlaybackRate(menu.val());
-      console.log(menu.val());
+    function normalSpeed(){
+      player.setPlaybackRate('1');
     }
+    // function changePlaybackSpeed() {
+    //   var menu = $('#playback-speeds');
+    //   player.setPlaybackRate(menu.val());
+    //   console.log(menu.val());
+    // }
   </script>
 </body>
 </html>
