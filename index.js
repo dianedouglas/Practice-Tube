@@ -1,6 +1,5 @@
-
+var searchTerm;
 (function() {
-  var searchTerm;
   // Retrieve your client ID from the Google Developers Console at
   // https://console.developers.google.com/.
   var OAUTH2_CLIENT_ID = '1070803394366-and4mdf2i6p63bql38m81klajnshep25.apps.googleusercontent.com';
@@ -75,17 +74,17 @@
       gapi.client.load('youtubeAnalytics', 'v1', function() {
         // After both client interfaces load, use the Data API to request
         // information about the authenticated user's channel.
-        search();
+        search('lord of the rings');
         // getUserChannel();
       });
     });
   }
 
-  function search() {
+  function search(query) {
     // Use the JavaScript client library to create a search.list() API call.
     var request = gapi.client.youtube.search.list({
         part: 'snippet',
-        q: 'lord of the rings'
+        q: query
     });
     
     // Send the request to the API server,
@@ -320,7 +319,6 @@ function onSearchResponse(response) {
 $(document).ready(function(){
   $('#search').click(function(){
     searchTerm = $('#find-videos').val();
-    console.log(searchTerm);
-    alert('test');
+    debugger;
   });
 });
