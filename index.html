@@ -21,6 +21,7 @@
   <button onclick="loadVideoById()">Load</button>
   <button onclick="getLoopStartTime()">Start Loop</button>
   <button onclick="getLoopEndTime()">End Loop</button>
+  <button onclick="startLooping()">Looping Go!</button>
   <iframe id="existing-iframe-example"
           width="640" height="360"
           src="https://www.youtube.com/embed/_SBQvd6vY9s?enablejsapi=1"
@@ -55,13 +56,19 @@
       player.playVideo();
 
     }
+    var endTime;
+    var startTime;
     function getLoopStartTime() {
-      var startTime = player.getCurrentTime();
-      console.log(startTime);
+      startTime = player.getCurrentTime();
     }
     function getLoopEndTime() {
-      var endTime = player.getCurrentTime();
-      console.log(endTime);
+      endTime = player.getCurrentTime();
+    }
+    function startLooping() {
+      player.cueVideoById({'videoId': id,
+        'startSeconds': startTime,
+        'endSeconds': endTime});
+      player.playVideo();
     }
     function onPlayerReady(event) {
       document.getElementById('existing-iframe-example').style.borderColor = '#FF6D00';
@@ -87,6 +94,9 @@
     }
     function onPlayerStateChange(event) {
       changeBorderColor(event.data);
+      if (event.data == 0) {
+        player.playVideo();
+      };
     }
   </script>
 </body>
