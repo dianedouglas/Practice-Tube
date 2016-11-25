@@ -30,6 +30,8 @@ function onSearchResponse(response) {
         });
       };
     });
+    debugger;
+    // if (response.) {};
 }
 
 (function() {
