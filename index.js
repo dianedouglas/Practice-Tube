@@ -10,6 +10,12 @@ var searchTerm;
     // and invoke onSearchRepsonse() with the response.
     request.execute(onSearchResponse);
 }
+
+// Called automatically with the response of the YouTube API request.
+function onSearchResponse(response) {
+    console.log(response);
+}
+
 (function() {
   // Retrieve your client ID from the Google Developers Console at
   // https://console.developers.google.com/.
@@ -91,10 +97,7 @@ var searchTerm;
     });
   }
 
-// Called automatically with the response of the YouTube API request.
-function onSearchResponse(response) {
-    console.log(response);
-}
+
 
   // Call the Data API to retrieve information about the currently
   // authenticated user's YouTube channel.
