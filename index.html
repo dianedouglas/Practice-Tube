@@ -139,7 +139,7 @@
     }
     function setupPlaybackSpeedOptions() {
       var options = player.getAvailablePlaybackRates();
-      var menu = $('#playback-speeds');
+      var menu = $('#playback-speeds').empty();
       options.forEach(function(speed){
         menu.append($('<option />').val(speed).text(speed));
       });
