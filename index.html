@@ -95,7 +95,7 @@
     function onPlayerStateChange(event) {
       changeBorderColor(event.data);
       if (event.data == 0) {
-        player.playVideo();
+        startLooping();
       };
     }
   </script>
