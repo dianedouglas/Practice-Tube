@@ -315,9 +315,12 @@ function onSearchResponse(response) {
     $('#message').hide();
   }
 
+})();
+
+$(document).ready(function(){
   $('#search').click(function(){
     searchTerm = $('#find-videos').val();
     console.log(searchTerm);
     alert('test');
-  })
-})();
+  });
+});
