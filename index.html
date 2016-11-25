@@ -65,7 +65,7 @@
       endTime = player.getCurrentTime();
     }
     function startLooping() {
-      player.cueVideoById({'videoId': id,
+      player.cueVideoById({'videoId': videoId,
         'startSeconds': startTime,
         'endSeconds': endTime});
       player.playVideo();
