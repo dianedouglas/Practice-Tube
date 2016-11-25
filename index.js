@@ -40,13 +40,21 @@ function onSearchResponse(response) {
       };
     });
     $('#pager').empty();
+    
+    if (response.prevPageToken) {
+      $('#pager').append('<a class="prev" id="' + response.prevPageToken + '">Prev</a>')
+    };
+    $('.prev').click(function(){
+      var pageToken = $(this).attr('id');
+      search(searchTerm, pageToken);
+    });
     if (response.nextPageToken) {
       $('#pager').append('<a class="next" id="' + response.nextPageToken + '">Next</a>')
     };
     $('.next').click(function(){
       var pageToken = $(this).attr('id');
       search(searchTerm, pageToken);
-    })
+    });    
 }
 
 (function() {
