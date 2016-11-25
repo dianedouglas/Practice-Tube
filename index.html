@@ -73,7 +73,8 @@
       startLooping();
     }
     function startLooping() {
-      player.cueVideoById({'videoId': videoId,
+      var currentVideoId = player.getVideoData()['video_id'];
+      player.cueVideoById({'videoId': currentVideoId,
         'startSeconds': startTime,
         'endSeconds': endTime});
       player.playVideo();
@@ -81,7 +82,8 @@
     function resumePlayback() {
       var duration = player.getDuration();
       var currentTime = player.getCurrentTime();
-      player.cueVideoById({'videoId': videoId,
+      var currentVideoId = player.getVideoData()['video_id'];
+      player.cueVideoById({'videoId': currentVideoId,
         'startSeconds': currentTime,
         'endSeconds': duration});
       player.playVideo();
