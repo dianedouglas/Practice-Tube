@@ -24,7 +24,7 @@ function onSearchResponse(response) {
         var imgPlusDivWithId = '<div class="videoThumb" id="' + currentVideoId + '">' + imgTag + '</div>'
         console.log(imgPlusDivWithId);
         $('#results').append(imgPlusDivWithId);
-        $('.videoThumb').click(function(){
+        $('.videoThumb').last().click(function(){
           var videoIdToPlay = $(this).attr('id');
           console.log(videoIdToPlay);
         });
