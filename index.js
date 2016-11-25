@@ -1,5 +1,6 @@
 
 (function() {
+  var searchTerm;
   // Retrieve your client ID from the Google Developers Console at
   // https://console.developers.google.com/.
   var OAUTH2_CLIENT_ID = '1070803394366-and4mdf2i6p63bql38m81klajnshep25.apps.googleusercontent.com';
@@ -313,4 +314,10 @@ function onSearchResponse(response) {
   function hideMessage() {
     $('#message').hide();
   }
+
+  $('#search').submit(function(){
+    event.preventDefault();
+    searchTerm = $('#find-videos').val();
+    console.log(searchTerm);
+  })
 })();
