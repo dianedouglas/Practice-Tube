@@ -316,8 +316,8 @@ function onSearchResponse(response) {
   }
 
   $('#search').click(function(){
-    event.preventDefault();
     searchTerm = $('#find-videos').val();
     console.log(searchTerm);
+    alert('test');
   })
 })();
