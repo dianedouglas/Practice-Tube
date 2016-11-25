@@ -18,7 +18,7 @@
     <div>Choose a Video:</div>
     <ul id="video-list"></ul>
   </div>
-  <button onclick="triggerFromIdLink()">Load</button>
+  <button onclick="loadVideoById()">Load</button>
   <iframe id="existing-iframe-example"
           width="640" height="360"
           src="https://www.youtube.com/embed/_SBQvd6vY9s?enablejsapi=1"
@@ -34,6 +34,7 @@
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
     var player;
+    var videoId = "YxgsxaFWWHQ";
     function onYouTubeIframeAPIReady() {
       player = new YT.Player('existing-iframe-example', {
           events: {
@@ -42,19 +43,15 @@
           }
       });
     }
-    function triggerFromIdLink(){      
-      var videoId = "YxgsxaFWWHQ";
-      loadAndPlayVideoByIdFromBeginning(videoId);
-    }
-    function loadAndPlayVideoByIdFromBeginning(id) {
+    function loadVideoById() {
       // player.cueVideoById({'videoId': id,
       //          'startSeconds': 15,
       //          'endSeconds': 60,
       //          'suggestedQuality': 'large'});
 
-      player.cueVideoById({'videoId': id);
+      player.cueVideoById({'videoId': videoId);
       player.playVideo();
-      //set up functionality to capture current time for start/end time and loop.
+
     }
     function onPlayerReady(event) {
       document.getElementById('existing-iframe-example').style.borderColor = '#FF6D00';
