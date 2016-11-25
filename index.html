@@ -33,7 +33,7 @@
   <button onclick="back20()">Back 20 Seconds</button>
   <button onclick="back30()">Back 30 Seconds</button>
   <button onclick="back60()">Back 60 Seconds</button>
-  <select id="playback-speeds"></select>
+  <select id="playback-speeds" onclick="changePlaybackSpeed()"></select>
 
   <script type="text/javascript">
     var tag = document.createElement('script');
@@ -143,6 +143,11 @@
       options.forEach(function(speed){
         menu.append($('<option />').val(speed).text(speed));
       });
+    }
+    function changePlaybackSpeed() {
+      var menu = $('#playback-speeds');
+      player.setPlaybackRate(menu.val());
+      console.log(menu.val());
     }
   </script>
 </body>
