@@ -19,6 +19,8 @@
     <ul id="video-list"></ul>
   </div>
   <button onclick="loadVideoById()">Load</button>
+  <button onclick="getLoopStartTime()">Start Loop</button>
+  <button onclick="getLoopEndTime()">End Loop</button>
   <iframe id="existing-iframe-example"
           width="640" height="360"
           src="https://www.youtube.com/embed/_SBQvd6vY9s?enablejsapi=1"
@@ -52,6 +54,14 @@
       player.cueVideoById({'videoId': videoId});
       player.playVideo();
 
+    }
+    function getLoopStartTime() {
+      var startTime = player.getCurrentTime();
+      console.log(startTime);
+    }
+    function getLoopEndTime() {
+      var endTime = player.getCurrentTime();
+      console.log(endTime);
     }
     function onPlayerReady(event) {
       document.getElementById('existing-iframe-example').style.borderColor = '#FF6D00';
