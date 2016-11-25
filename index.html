@@ -104,6 +104,7 @@
     }
     function onPlayerReady(event) {
       document.getElementById('existing-iframe-example').style.borderColor = '#FF6D00';
+      console.log(player.getAvailablePlaybackRates());
     }
     function changeBorderColor(playerStatus) {
       var color;
