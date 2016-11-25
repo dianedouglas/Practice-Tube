@@ -18,17 +18,21 @@
     <div>Choose a Video:</div>
     <ul id="video-list"></ul>
   </div>
-  <button onclick="loadVideoById()">Load</button>
-  <button onclick="getLoopStartTime()">Start Loop</button>
-  <button onclick="getLoopEndTime()">End Loop</button>
-  <button onclick="startLooping()">Looping Go!</button>
-  <button onclick="resumePlayback()">Resume Playback</button>
   <iframe id="existing-iframe-example"
           width="640" height="360"
           src="https://www.youtube.com/embed/_SBQvd6vY9s?enablejsapi=1"
           frameborder="0"
           style="border: solid 4px #37474F"
   ></iframe>
+  <button onclick="loadVideoById()">Load</button>
+  <button onclick="getLoopStartTime()">Start Loop</button>
+  <button onclick="getLoopEndTime()">End Loop</button>
+  <button onclick="startLooping()">Looping Go!</button>
+  <button onclick="resumePlayback()">Resume Playback</button>
+  <button onclick="back10()">Back 10 Seconds</button>
+  <button onclick="back20()">Back 20 Seconds</button>
+  <button onclick="back30()">Back 30 Seconds</button>
+  <button onclick="back60()">Back 60 Seconds</button>
 
   <script type="text/javascript">
     var tag = document.createElement('script');
@@ -79,6 +83,22 @@
         'startSeconds': currentTime,
         'endSeconds': duration});
       player.playVideo();
+    }
+    function back10() {
+      var currentTime = player.getCurrentTime();
+      player.seekTo(currentTime - 10);
+    }
+    function back20() {
+      var currentTime = player.getCurrentTime();
+      player.seekTo(currentTime - 20);
+    }
+    function back30() {
+      var currentTime = player.getCurrentTime();
+      player.seekTo(currentTime - 30);
+    }
+    function back60() {
+      var currentTime = player.getCurrentTime();
+      player.seekTo(currentTime - 60);
     }
     function onPlayerReady(event) {
       document.getElementById('existing-iframe-example').style.borderColor = '#FF6D00';
