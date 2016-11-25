@@ -18,9 +18,10 @@
     <div>Choose a Video:</div>
     <ul id="video-list"></ul>
   </div>
+  <button onclick="loadVideoById()">Load</button>
   <iframe id="existing-iframe-example"
           width="640" height="360"
-          src="https://www.youtube.com/embed/YxgsxaFWWHQ?enablejsapi=1"
+          src="https://www.youtube.com/embed/_SBQvd6vY9s?enablejsapi=1"
           frameborder="0"
           style="border: solid 4px #37474F"
   ></iframe>
@@ -40,6 +41,13 @@
             'onStateChange': onPlayerStateChange
           }
       });
+    }
+    function loadVideoById() {
+      player.cueVideoById({'videoId': 'YxgsxaFWWHQ',
+               'startSeconds': 5,
+               'endSeconds': 60,
+               'suggestedQuality': 'large'});
+
     }
     function onPlayerReady(event) {
       document.getElementById('existing-iframe-example').style.borderColor = '#FF6D00';
