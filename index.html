@@ -33,6 +33,7 @@
   <button onclick="back20()">Back 20 Seconds</button>
   <button onclick="back30()">Back 30 Seconds</button>
   <button onclick="back60()">Back 60 Seconds</button>
+  <select id="playback-speeds"></select>
 
   <script type="text/javascript">
     var tag = document.createElement('script');
@@ -105,6 +106,7 @@
     function onPlayerReady(event) {
       document.getElementById('existing-iframe-example').style.borderColor = '#FF6D00';
       console.log(player.getAvailablePlaybackRates());
+      setupPlaybackSpeedOptions();
     }
     function changeBorderColor(playerStatus) {
       var color;
@@ -132,7 +134,15 @@
       };
       if (event.data == 5) {
         console.log(player.getAvailablePlaybackRates());
+        setupPlaybackSpeedOptions();
       }
+    }
+    function setupPlaybackSpeedOptions() {
+      var options = player.getAvailablePlaybackRates();
+      var menu = $('#playback-speeds');
+      options.forEach(function(speed){
+        menu.append($('<option />').val(speed).text(speed));
+      });
     }
   </script>
 </body>
