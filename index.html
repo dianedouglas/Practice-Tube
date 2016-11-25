@@ -58,7 +58,6 @@
       //          'suggestedQuality': 'large'});
 
       player.cueVideoById({'videoId': videoId});
-      console.log(player.getAvailablePlaybackRates());
       player.playVideo();
 
     }
@@ -130,6 +129,9 @@
       if (event.data == 0) {
         startLooping();
       };
+      if (event.data == 5) {
+        console.log(player.getAvailablePlaybackRates());
+      }
     }
   </script>
 </body>
