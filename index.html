@@ -24,7 +24,6 @@
           frameborder="0"
           style="border: solid 4px #37474F"
   ></iframe>
-  <button onclick="loadVideoById()">Load</button>
   <button onclick="getLoopStartTime()">Start Loop</button>
   <button onclick="getLoopEndTime()">End Loop</button>
   <button onclick="startLooping()">Looping Go!</button>
@@ -54,13 +53,13 @@
           }
       });
     }
-    function loadVideoById() {
+    function loadVideoById(id) {
       // player.cueVideoById({'videoId': id,
       //          'startSeconds': 15,
       //          'endSeconds': 60,
       //          'suggestedQuality': 'large'});
 
-      player.cueVideoById({'videoId': videoId});
+      player.cueVideoById({'videoId': id});
       player.playVideo();
 
     }

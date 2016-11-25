@@ -26,8 +26,7 @@ function onSearchResponse(response) {
         $('#results').append(imgPlusDivWithId);
         $('.videoThumb').last().click(function(){
           var videoIdToPlay = $(this).attr('id');
-          console.log(videoIdToPlay);
-          debugger;
+          loadVideoById(videoIdToPlay);
         });
       };
     });
