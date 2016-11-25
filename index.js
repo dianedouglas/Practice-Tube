@@ -5,12 +5,14 @@ function search(query, pageToken) {
       var request = gapi.client.youtube.search.list({
           part: 'snippet',
           q: query,
-          pageToken: pageToken
+          pageToken: pageToken,
+          maxResults: 25
       });
     }else {    
       var request = gapi.client.youtube.search.list({
           part: 'snippet',
-          q: query
+          q: query,
+          maxResults: 25
       });
     }
 
