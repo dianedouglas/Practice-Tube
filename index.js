@@ -1,6 +1,5 @@
 var searchTerm;
-  function search(query) {
-    debugger;
+function search(query) {
     // Use the JavaScript client library to create a search.list() API call.
     var request = gapi.client.youtube.search.list({
         part: 'snippet',
@@ -14,7 +13,8 @@ var searchTerm;
 
 // Called automatically with the response of the YouTube API request.
 function onSearchResponse(response) {
-    console.log(response);
+    debugger;
+    // $('#results').append()
 }
 
 (function() {
