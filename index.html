@@ -75,8 +75,8 @@
         <!-- Portfolio Item Heading -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Portfolio Item
-                    <small>Item Subheading</small>
+                <h1 class="page-header">Practice Tube
+                    <small>A Looper for YouTube Videos</small>
                 </h1>
             </div>
         </div>
@@ -99,17 +99,27 @@
                 </div>
 
                 <div class="col-md-4">
-                    <h3>Project Description</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
-                    <h3>Project Details</h3>
-                    <ul>
-                        <li>Lorem Ipsum</li>
-                        <li>Dolor Sit Amet</li>
-                        <li>Consectetur</li>
-                        <li>Adipiscing Elit</li>
-                    </ul>
+                    <h3>Practice Music with YouTube Videos</h3>
+                    <p>Find a video you want to practice with, then loop the hard parts at half speed until you get it!</p>
                     <input id="find-videos" type="text">
                     <button id="search" type="submit">Go</button>
+                    <h3>Looper Controls</h3>
+                    <div class="row">
+                        <div class="col-sm-3 col-xs-6">
+                            <button onclick="getLoopStartTime()">Start Loop</button>
+                            <button onclick="getLoopEndTime()">End Loop</button>
+                            <button onclick="startLooping()">Looping Go!</button>
+                            <button onclick="resumePlayback()">Resume Playback</button>
+                            <button onclick="halfSpeed()">Wait! Slow Down! (AKA Half Speed)</button>
+                        </div>
+                        <div class="col-sm-3 col-xs-6">
+                            <button onclick="back10()">Back 10 Seconds</button>
+                            <button onclick="back20()">Back 20 Seconds</button>
+                            <button onclick="back30()">Back 30 Seconds</button>
+                            <button onclick="back60()">Back 60 Seconds</button>
+                            <button onclick="normalSpeed()">OK I got it! (AKA Normal Speed)</button>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -136,7 +146,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p>By Diane Douglas: <a href="www.melodiccode.com">www.MelodicCode.com</a></p>
                 </div>
             </div>
             <!-- /.row -->
