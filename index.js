@@ -105,13 +105,13 @@ function search(query, pageToken) {
         part: 'snippet',
         q: query,
         pageToken: pageToken,
-        maxResults: 4
+        maxResults: 8
     });
   }else {    
     var request = gapi.client.youtube.search.list({
         part: 'snippet',
         q: query,
-        maxResults: 4
+        maxResults: 8
     });
   }
   // execute request, send to API server,
@@ -124,6 +124,7 @@ function onSearchResponse(response) {
     $('#results').empty();
     var rowCounter = -1;
     $('#results').append('<div class="row">');
+    console.log(response.items);
     response.items.forEach(function(video){
       // debugger;
       // if we're inside a row
@@ -131,8 +132,7 @@ function onSearchResponse(response) {
         rowCounter++;
         if (rowCounter < 4) {
           var currentVideoId = video.id.videoId;
-          console.log(video.snippet.thumbnails);
-          var url = video.snippet.thumbnails.default.url;
+          var url = video.snippet.thumbnails.medium.url;
           var imgTag = '<img class="img-responsive portfolio-item" src="' + url +'">';
           var imgPlusDivWithId = '<div class="col-sm-3 col-xs-6 videoThumb" id="' + currentVideoId + '">' + imgTag + '</div>';
           $('#results').append(imgPlusDivWithId);
@@ -147,8 +147,7 @@ function onSearchResponse(response) {
           $('#results').append('</div>');
           $('#results').append('<div class="row">');
           var currentVideoId = video.id.videoId;
-          console.log(video.snippet.thumbnails);
-          var url = video.snippet.thumbnails.default.url;
+          var url = video.snippet.thumbnails.medium.url;
           var imgTag = '<img class="img-responsive portfolio-item" src="' + url +'">';
           var imgPlusDivWithId = '<div class="col-sm-3 col-xs-6 videoThumb" id="' + currentVideoId + '">' + imgTag + '</div>';
           $('#results').append(imgPlusDivWithId);
