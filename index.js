@@ -122,6 +122,7 @@ function search(query, pageToken) {
 // Display results of search and pagers.
 function onSearchResponse(response) {
     $('#results').empty();
+    debugger;
     var rowCounter = 0;
     var resultsHTML = '<div class="row">';
     response.items.forEach(function(video){
