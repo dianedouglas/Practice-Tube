@@ -124,8 +124,8 @@ function onSearchResponse(response) {
     $('#results').empty();
     var rowCounter = -1;
     $('#results').append('<div class="row">');
-    response.items.forEach(function(video){
       debugger;
+    response.items.forEach(function(video){
       // if we're inside a row
       rowCounter++;
       if (video.id.videoId) { //don't show channels etc.
@@ -150,7 +150,7 @@ function onSearchResponse(response) {
           console.log(video.snippet.thumbnails);
           var url = video.snippet.thumbnails.default.url;
           var imgTag = '<img class="img-responsive portfolio-item" src="' + url +'">';
-          var imgPlusDivWithId = '<div class="class="col-sm-3 col-xs-6 videoThumb" id="' + currentVideoId + '">' + imgTag + '</div>';
+          var imgPlusDivWithId = '<div class="col-sm-3 col-xs-6 videoThumb" id="' + currentVideoId + '">' + imgTag + '</div>';
           $('#results').append(imgPlusDivWithId);
           $('.videoThumb').last().click(function(){
             var videoIdToPlay = $(this).attr('id');
