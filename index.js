@@ -105,13 +105,13 @@ function search(query, pageToken) {
         part: 'snippet',
         q: query,
         pageToken: pageToken,
-        maxResults: 8
+        maxResults: 4
     });
   }else {    
     var request = gapi.client.youtube.search.list({
         part: 'snippet',
         q: query,
-        maxResults: 8
+        maxResults: 4
     });
   }
   // execute request, send to API server,
