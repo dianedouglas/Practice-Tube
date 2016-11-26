@@ -142,7 +142,7 @@ function onSearchResponse(response) {
 
         } else { // if we've reached the end of a row
           // reset counter to 0.
-          rowCounter = 0;
+          rowCounter = 1;
           // add a closing row div, start new one.
           resultsHTML += '</div>';
           resultsHTML += '<div class="row">';
