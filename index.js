@@ -1,5 +1,3 @@
-$(document).ready(function(){
-
 var searchTerm;
 function search(query, pageToken) {
     // Use the JavaScript client library to create a search.list() API call.
@@ -61,7 +59,7 @@ function onSearchResponse(response) {
     });    
 }
 
-// (function() {
+(function() {
   // Retrieve your client ID from the Google Developers Console at
   // https://console.developers.google.com/.
   var OAUTH2_CLIENT_ID = '1070803394366-and4mdf2i6p63bql38m81klajnshep25.apps.googleusercontent.com';
@@ -133,15 +131,16 @@ function onSearchResponse(response) {
   // https://developers.google.com/api-client-library/javascript/dev/dev_jscript#loading-the-client-library-and-the-api
   function loadAPIClientInterfaces() {
     gapi.client.load('youtube', 'v3', function() {
-      gapi.client.load('youtubeAnalytics', 'v1', function() {
+      // gapi.client.load('youtubeAnalytics', 'v1', function() {
         // After both client interfaces load, use the Data API to request
         // information about the authenticated user's channel.
         search('lord of the rings');
         // getUserChannel();
-      });
+      // });
     });
   }
 
+})();
   // This helper method displays a message on the page.
   function displayMessage(message) {
     $('#message').text(message).show();
@@ -151,9 +150,7 @@ function onSearchResponse(response) {
   function hideMessage() {
     $('#message').hide();
   }
-
-// })();
-
+$(document).ready(function(){
   $('#search').click(function(){
     searchTerm = $('#find-videos').val();
     search(searchTerm);
