@@ -106,56 +106,18 @@
     }
     function onPlayerReady(event) {
       document.getElementById('existing-iframe-example').style.borderColor = '#FF6D00';
-      console.log(player.getAvailablePlaybackRates());
-      // setupPlaybackSpeedOptions();
-    }
-    function changeBorderColor(playerStatus) {
-      var color;
-      if (playerStatus == -1) {
-        color = "#37474F"; // unstarted = gray
-      } else if (playerStatus == 0) {
-        color = "#FFFF00"; // ended = yellow
-      } else if (playerStatus == 1) {
-        color = "#33691E"; // playing = green
-      } else if (playerStatus == 2) {
-        color = "#DD2C00"; // paused = red
-      } else if (playerStatus == 3) {
-        color = "#AA00FF"; // buffering = purple
-      } else if (playerStatus == 5) {
-        color = "#FF6DOO"; // video cued = orange
-      }
-      if (color) {
-        document.getElementById('existing-iframe-example').style.borderColor = color;
-      }
     }
     function onPlayerStateChange(event) {
-      changeBorderColor(event.data);
       if (event.data == 0) {
         startLooping();
-      };
-      if (event.data == 5) {
-        console.log(player.getAvailablePlaybackRates());
-        // setupPlaybackSpeedOptions();
       }
     }
-    // function setupPlaybackSpeedOptions() {
-    //   var options = player.getAvailablePlaybackRates();
-    //   var menu = $('#playback-speeds').empty();
-    //   options.forEach(function(speed){
-    //     menu.append($('<option />').val(speed).text(speed));
-    //   });
-    // }
     function halfSpeed(){
       player.setPlaybackRate('.5');
     }
     function normalSpeed(){
       player.setPlaybackRate('1');
     }
-    // function changePlaybackSpeed() {
-    //   var menu = $('#playback-speeds');
-    //   player.setPlaybackRate(menu.val());
-    //   console.log(menu.val());
-    // }
   </script>
 </body>
 </html>
