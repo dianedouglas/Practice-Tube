@@ -122,8 +122,7 @@ function search(query, pageToken) {
 // Display results of search and pagers.
 function onSearchResponse(response) {
     $('#results').empty();
-    debugger;
-    var rowCounter = 0;
+    var rowCounter = -1;
     var resultsHTML = '<div class="row">';
     response.items.forEach(function(video){
       // if we're inside a row
@@ -134,7 +133,7 @@ function onSearchResponse(response) {
           console.log(video.snippet.thumbnails);
           var url = video.snippet.thumbnails.default.url;
           var imgTag = '<img class="img-responsive portfolio-item" src="' + url +'">';
-          var imgPlusDivWithId = '<div class="class="col-sm-3 col-xs-6 videoThumb" id="' + currentVideoId + '">' + imgTag + '</div>';
+          var imgPlusDivWithId = '<div class="col-sm-3 col-xs-6 videoThumb" id="' + currentVideoId + '">' + imgTag + '</div>';
           resultsHTML += imgPlusDivWithId;
           $('.videoThumb').last().click(function(){
             var videoIdToPlay = $(this).attr('id');
@@ -143,7 +142,7 @@ function onSearchResponse(response) {
 
         } else { // if we've reached the end of a row
           // reset counter to 0.
-          rowCounter = 1;
+          rowCounter = 0;
           // add a closing row div, start new one.
           resultsHTML += '</div>';
           resultsHTML += '<div class="row">';
