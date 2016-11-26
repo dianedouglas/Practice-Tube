@@ -124,8 +124,8 @@ function onSearchResponse(response) {
     $('#results').empty();
     var rowCounter = -1;
     $('#results').append('<div class="row">');
-      debugger;
     response.items.forEach(function(video){
+      debugger;
       // if we're inside a row
       rowCounter++;
       if (video.id.videoId) { //don't show channels etc.
