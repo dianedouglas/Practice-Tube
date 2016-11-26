@@ -1,8 +1,17 @@
-// global variable setup for video query. used with next/prev page requests.
+//////////////////// GLOBALS ////////////////////
+// variable setup to hold video query string. used with next/prev page requests.
 var searchTerm;
-// global video for iframe player.
+// holds iframe player, called by all playback functions.
 var player;
+// loop points. set by 'getLoopStartTime' and 'getLoopEndTime' on click, used in startLooping function.
+// this function starts and restarts loop, it is called repeatedly from various places
+// so it does not seem needed to pass in a local copy of start/end time. 
+// these should be referenced from anywhere and changed from anywhere.
+var startTime;
+var endTime;
+/////////////////////////////////////////////////
 
+//////////////////// YOUTUBE IFRAME PLAYER & PLAYBACK FUNCTIONS ////////////////////
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('existing-iframe-example', {
       events: {
@@ -15,8 +24,6 @@ function loadVideoById(id) {
   player.cueVideoById({'videoId': id});
   player.playVideo();
 }
-var endTime;
-var startTime;
 function getLoopStartTime() {
   startTime = player.getCurrentTime();
 }
@@ -70,25 +77,29 @@ function halfSpeed(){
 function normalSpeed(){
   player.setPlaybackRate('1');
 }
+/////////////////////////////////////////////////
 
-// attach click handler to search button when document ready.
+
+//////////////////// ATTACH CLICK HANDLERS ON DOCUMENT READY ////////////////////
 $(document).ready(function(){
+  // attach click handler to search button
   $('#search').click(function(){
     searchTerm = $('#find-videos').val();
     search(searchTerm);
   });
 
-
+  // load iframe tag
   var tag = document.createElement('script');
   tag.id = 'iframe-demo';
   tag.src = 'https://www.youtube.com/iframe_api';
   var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
 });
+/////////////////////////////////////////////////
 
+//////////////////// SEARCH FOR VIDEOS & DISPLAY RESULTS ////////////////////
 function search(query, pageToken) {
-  // Use the JavaScript client library to create a search.list() API call.
+  // create search.list youtube data API call with or without page token.
   if(pageToken) {    
     var request = gapi.client.youtube.search.list({
         part: 'snippet',
@@ -103,7 +114,7 @@ function search(query, pageToken) {
         maxResults: 25
     });
   }
-  // Send the request to the API server,
+  // execute request, send to API server,
   // when response comes back, call 'onSearchResponse' function.
   request.execute(onSearchResponse);
 }
@@ -144,9 +155,11 @@ function onSearchResponse(response) {
       search(searchTerm, pageToken);
     });    
 }
+/////////////////////////////////////////////////
 
+//////////////////// AUTH & LOAD YOUTUBE API WHEN PAGE LOADS ////////////////////
 (function() {
-  // set up api data
+  // set up youtube data api info
   var OAUTH2_CLIENT_ID = '1070803394366-and4mdf2i6p63bql38m81klajnshep25.apps.googleusercontent.com';
   var OAUTH2_SCOPES = [
     'https://www.googleapis.com/auth/youtube.readonly'
