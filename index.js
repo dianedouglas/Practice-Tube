@@ -122,24 +122,45 @@ function search(query, pageToken) {
 // Display results of search and pagers.
 function onSearchResponse(response) {
     $('#results').empty();
+    var rowCounter = 0;
+    var resultsHTML = '<div class="row">';
     response.items.forEach(function(video){
+      // if we're inside a row
+      rowCounter++;
       if (video.id.videoId) { //don't show channels etc.
-        console.log(video.id.videoId);
-        console.log(video.snippet.title);
-        var currentVideoId = video.id.videoId;
-        var url = video.snippet.thumbnails.default.url;
-        var imgTag = '<img src="' + url +'">';
-        var imgPlusDivWithId = '<div class="videoThumb" id="' + currentVideoId + '">' + imgTag + '</div>'
-        console.log(imgPlusDivWithId);
-        $('#results').append(imgPlusDivWithId);
-        $('.videoThumb').last().click(function(){
-          var videoIdToPlay = $(this).attr('id');
-          loadVideoById(videoIdToPlay);
-        });
+        if (rowCounter < 4) {
+          var currentVideoId = video.id.videoId;
+          console.log(video.snippet.thumbnails);
+          var url = video.snippet.thumbnails.default.url;
+          var imgTag = '<img class="img-responsive portfolio-item" src="' + url +'">';
+          var imgPlusDivWithId = '<div class="class="col-sm-3 col-xs-6 videoThumb" id="' + currentVideoId + '">' + imgTag + '</div>';
+          resultsHTML += imgPlusDivWithId;
+          $('.videoThumb').last().click(function(){
+            var videoIdToPlay = $(this).attr('id');
+            loadVideoById(videoIdToPlay);
+          });
+
+        } else { // if we've reached the end of a row
+          // reset counter to 0.
+          rowCounter = 1;
+          // add a closing row div, start new one.
+          resultsHTML += '</div>';
+          resultsHTML += '<div class="row">';
+          var currentVideoId = video.id.videoId;
+          console.log(video.snippet.thumbnails);
+          var url = video.snippet.thumbnails.default.url;
+          var imgTag = '<img class="img-responsive portfolio-item" src="' + url +'">';
+          var imgPlusDivWithId = '<div class="class="col-sm-3 col-xs-6 videoThumb" id="' + currentVideoId + '">' + imgTag + '</div>';
+          resultsHTML += imgPlusDivWithId;
+          $('.videoThumb').last().click(function(){
+            var videoIdToPlay = $(this).attr('id');
+            loadVideoById(videoIdToPlay);
+          });
+        };
       };
     });
     $('#pager').empty();
-    
+    $('#results').append(resultsHTML);
     if (response.prevPageToken) {
       $('#pager').append('<a class="prev" id="' + response.prevPageToken + '">Prev</a>')
     };
