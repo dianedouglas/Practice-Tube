@@ -105,13 +105,15 @@ function search(query, pageToken) {
         part: 'snippet',
         q: query,
         pageToken: pageToken,
-        maxResults: 8
+        maxResults: 8,
+        type: 'video'
     });
   }else {    
     var request = gapi.client.youtube.search.list({
         part: 'snippet',
         q: query,
-        maxResults: 8
+        maxResults: 8,
+        type: 'video'
     });
   }
   // execute request, send to API server,
@@ -126,7 +128,7 @@ function onSearchResponse(response) {
     $('#results').append('<div class="row">');
     console.log(response.items);
     response.items.forEach(function(video){
-      // debugger;
+      debugger;
       // if we're inside a row
       if (video.id.videoId) { //don't show channels etc.
         rowCounter++;
@@ -160,7 +162,7 @@ function onSearchResponse(response) {
     });
     $('#pager').empty();
     if (response.prevPageToken) {
-      $('#pager').append('<a class="prev" id="' + response.prevPageToken + '">Prev</a>')
+      $('#pager').append('<a class="prev" id="' + response.prevPageToken + '">Prev</a> | ')
     };
     $('.prev').click(function(){
       var pageToken = $(this).attr('id');
