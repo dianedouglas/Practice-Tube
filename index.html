@@ -9,7 +9,7 @@
   <script type="text/javascript" src="https://apis.google.com/js/client.js?onload=onJSClientLoad"></script>
 </head>
 <body>
-  <div id="login-container" class="pre-auth">This application requires access to your YouTube account.
+  <div id="login-container" class="pre-auth">In order to search videos, this app needs you to login to your YouTube account. I promise I won't do anything with your information, ok?
     Please <a href="#" id="login-link">authorize</a> to continue.
   </div>
   <div class="post-auth">
@@ -52,14 +52,8 @@
       });
     }
     function loadVideoById(id) {
-      // player.cueVideoById({'videoId': id,
-      //          'startSeconds': 15,
-      //          'endSeconds': 60,
-      //          'suggestedQuality': 'large'});
-
       player.cueVideoById({'videoId': id});
       player.playVideo();
-
     }
     var endTime;
     var startTime;
@@ -88,9 +82,7 @@
     }
     function back10() {
       var currentTime = player.getCurrentTime();
-      console.log(player.getCurrentTime());
       player.seekTo(currentTime - 10);
-      console.log(player.getCurrentTime());
     }
     function back20() {
       var currentTime = player.getCurrentTime();
