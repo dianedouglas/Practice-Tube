@@ -125,10 +125,10 @@ function onSearchResponse(response) {
     var rowCounter = -1;
     $('#results').append('<div class="row">');
     response.items.forEach(function(video){
-      debugger;
+      // debugger;
       // if we're inside a row
-      rowCounter++;
       if (video.id.videoId) { //don't show channels etc.
+        rowCounter++;
         if (rowCounter < 4) {
           var currentVideoId = video.id.videoId;
           console.log(video.snippet.thumbnails);
