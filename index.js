@@ -7,6 +7,83 @@ $(document).ready(function(){
     searchTerm = $('#find-videos').val();
     search(searchTerm);
   });
+
+  
+  var tag = document.createElement('script');
+  tag.id = 'iframe-demo';
+  tag.src = 'https://www.youtube.com/iframe_api';
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  var player;
+  var videoId = "YxgsxaFWWHQ";
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('existing-iframe-example', {
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange
+        }
+    });
+  }
+  function loadVideoById(id) {
+    player.cueVideoById({'videoId': id});
+    player.playVideo();
+  }
+  var endTime;
+  var startTime;
+  function getLoopStartTime() {
+    startTime = player.getCurrentTime();
+  }
+  function getLoopEndTime() {
+    endTime = player.getCurrentTime();
+    startLooping();
+  }
+  function startLooping() {
+    var currentVideoId = player.getVideoData()['video_id'];
+    player.cueVideoById({'videoId': currentVideoId,
+      'startSeconds': startTime,
+      'endSeconds': endTime});
+    player.playVideo();
+  }
+  function resumePlayback() {
+    var duration = player.getDuration();
+    var currentTime = player.getCurrentTime();
+    var currentVideoId = player.getVideoData()['video_id'];
+    player.cueVideoById({'videoId': currentVideoId,
+      'startSeconds': currentTime,
+      'endSeconds': duration});
+    player.playVideo();
+  }
+  function back10() {
+    var currentTime = player.getCurrentTime();
+    player.seekTo(currentTime - 10);
+  }
+  function back20() {
+    var currentTime = player.getCurrentTime();
+    player.seekTo(currentTime - 20);
+  }
+  function back30() {
+    var currentTime = player.getCurrentTime();
+    player.seekTo(currentTime - 30);
+  }
+  function back60() {
+    var currentTime = player.getCurrentTime();
+    player.seekTo(currentTime - 60);
+  }
+  function onPlayerReady(event) {
+    document.getElementById('existing-iframe-example').style.borderColor = '#FF6D00';
+  }
+  function onPlayerStateChange(event) {
+    if (event.data == 0) {
+      startLooping();
+    }
+  }
+  function halfSpeed(){
+    player.setPlaybackRate('.5');
+  }
+  function normalSpeed(){
+    player.setPlaybackRate('1');
+  }
 });
 
 function search(query, pageToken) {
