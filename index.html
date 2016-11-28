@@ -24,6 +24,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/buttons.css">
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="//www.google.com/jsapi"></script>
     <script type="text/javascript" src="index.js"></script>
@@ -103,21 +104,19 @@
                     <p>Find a video you want to practice with, then loop the hard parts at half speed until you get it!</p>
                     <input id="find-videos" type="text">
                     <button id="search" type="submit">Go</button>
-                    <h3>Looper Controls</h3>
                     <div class="row">
-                        <div class="col-xs-6">
-                            <button onclick="getLoopStartTime()">Start Loop</button>
-                            <button onclick="getLoopEndTime()">End Loop</button>
-                            <button onclick="startLooping()">Looping Go!</button>
-                            <button onclick="resumePlayback()">Resume Playback</button>
-                            <button onclick="halfSpeed()">Wait! Slow Down! (AKA Half Speed)</button>
-                        </div>
-                        <div class="col-xs-6">
-                            <button onclick="back10()">Back 10 Seconds</button>
-                            <button onclick="back20()">Back 20 Seconds</button>
-                            <button onclick="back30()">Back 30 Seconds</button>
-                            <button onclick="back60()">Back 60 Seconds</button>
-                            <button onclick="normalSpeed()">OK I got it! (AKA Normal Speed)</button>
+                        <div class="col-xs-6 pane">
+                          <div class="col-xs-10">
+                            
+                            <span onclick="getLoopStartTime()" class="button"><p>Start Loop</p></span>
+                            <span onclick="getLoopEndTime()" class="button"><p>End Loop</p></span>
+                            <!-- <button onclick="startLooping()">Looping Go!</button>
+                            <button onclick="resumePlayback()">Resume Playback</button> -->
+<!--                             <span class="button" onclick="halfSpeed()">Slow</span>
+                            <span class="button" onclick="normalSpeed()">Normal</span> -->
+                            <span class="button" onclick="back10()"><p>Rewind :10</p></span>
+                            <span class="button" onclick="back30()"><p>Rewind :30</p></span>
+                          </div>
                         </div>
                     </div>
                 </div>
@@ -140,6 +139,7 @@
             <!-- /.row -->
 
     </div>
+
     <hr>
 
         <!-- Footer -->
