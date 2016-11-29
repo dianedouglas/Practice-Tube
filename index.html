@@ -105,33 +105,34 @@
                     <input id="find-videos" type="text">
                     <button id="search" type="submit">Go</button>
                     <div class="row">
-                        <div class="col-xs-6 pane">
-                          <div class="col-xs-10">
-                            
-                            <span onclick="getLoopStartTime()" class="button"><p>Start Loop</p></span>
-                            <span onclick="getLoopEndTime()" class="button"><p>End Loop</p></span>
-                            <!-- <button onclick="startLooping()">Looping Go!</button>
-                            <button onclick="resumePlayback()">Resume Playback</button> -->
-<!--                             <span class="button" onclick="halfSpeed()">Slow</span>
-                            <span class="button" onclick="normalSpeed()">Normal</span> -->
-                            <span class="button" onclick="back10()"><p>Rewind :10</p></span>
-                            <span class="button" onclick="back30()"><p>Rewind :30</p></span>
-                          </div>
+                        <div class="pane">
+                            <div class="col-xs-4">
+                                <span onclick="getLoopStartTime()" class="button"><p>Start Loop</p></span>
+                                <span class="button" onclick="back10()"><p>Rewind :10</p></span>
+                                <!-- <button onclick="startLooping()">Looping Go!</button>
+                                <button onclick="resumePlayback()">Resume Playback</button> -->
+    <!--                             <span class="button" onclick="halfSpeed()">Slow</span>
+                                <span class="button" onclick="normalSpeed()">Normal</span> -->
+                            </div>
+                            <div class="col-xs-4">
+                                <span onclick="getLoopEndTime()" class="button"><p>End Loop</p></span>
+                                <span class="button" onclick="back30()"><p>Rewind :30</p></span>
+                            </div>
+                            <div class="col-xs-4 toggles">
+                                    <p>Loop On/Off</p>
+                                    <div class="switch loopSwitch">
+                                        <input type="checkbox">
+                                        <label></label>
+                                    </div> 
+                                    <p>Half Speed</p>
+                                    <div class="switch speedSwitch">
+                                        <input type="checkbox">
+                                        <label></label>
+                                    </div> 
+                            </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-xs-6">
-                            <div class="switch loopSwitch">
-                                <input type="checkbox">
-                                <label></label>
-                            </div> 
-                        </div>
-                        <div class="col-xs-6">
-                            <div class="switch speedSwitch">
-                                <input type="checkbox">
-                                <label></label>
-                            </div> 
-                        </div>
                     </div>
                 </div>
 

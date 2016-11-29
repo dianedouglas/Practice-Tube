@@ -22,9 +22,11 @@
 
 
 .switch {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     position: relative;
+    margin-left: 20px;
+    margin-bottom: 20px;
 }
 
 .switch label {
@@ -85,3 +87,11 @@
         0 1px 0 rgba(255,255,255,0.4),
         0 0 10px 2px rgba(0, 210, 0, 0.5);
 }
+
+/*.switch.speedSwitch {
+  margin-top: 32px;
+}*/
+
+/*.switch.loopSwitch {
+  margin-top: 19px;
+}*/

@@ -27,11 +27,13 @@ h1:before,
 h1:after { content: " - " }
 .pane {
     display: block;
-    width: 375px;
+    width: 363px;
     text-align: center;
-    height: 260px;
+    height: 220px;
     padding: 10px;
-    margin: 20px auto;
+    padding-left: 0px;
+    margin: 10px auto;
+    margin-top: 20px;
     position: relative;
     /*box-shadow*/
     -webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,1), 0px 3px 15px 2px rgba(0,0,0,1);
@@ -148,4 +150,5 @@ span:hover>p {
 
 span.button {
     min-width: 90px;
+    margin-top: 33px;
 }
