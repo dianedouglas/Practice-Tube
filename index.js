@@ -136,7 +136,6 @@ function onSearchResponse(response) {
     $('#results').append('<div class="row">');
     console.log(response.items);
     response.items.forEach(function(video){
-      debugger;
       // if we're inside a row
       if (video.id.videoId) { //don't show channels etc.
         rowCounter++;
