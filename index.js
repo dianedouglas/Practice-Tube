@@ -37,6 +37,9 @@ function startLooping() {
     'startSeconds': startTime,
     'endSeconds': endTime});
   player.playVideo();
+  if ($('.loopSwitch input').is(':checked') === false) {
+    $('.loopSwitch input').attr('checked','checked');
+  };
 }
 function resumePlayback() {
   var duration = player.getDuration();
@@ -51,17 +54,9 @@ function back10() {
   var currentTime = player.getCurrentTime();
   player.seekTo(currentTime - 10);
 }
-function back20() {
-  var currentTime = player.getCurrentTime();
-  player.seekTo(currentTime - 20);
-}
 function back30() {
   var currentTime = player.getCurrentTime();
   player.seekTo(currentTime - 30);
-}
-function back60() {
-  var currentTime = player.getCurrentTime();
-  player.seekTo(currentTime - 60);
 }
 function onPlayerReady(event) {
   document.getElementById('existing-iframe-example').style.borderColor = '#FF6D00';
@@ -97,10 +92,18 @@ $(document).ready(function(){
 
   // attach click handlers to switches.
   $('.loopSwitch input').click(function(){
-    debugger;
+    if ($(this).is(':checked')) {
+      startLooping();
+    } else {
+      resumePlayback();
+    }
   });
   $('.speedSwitch input').click(function(){
-    console.log($(this).val());
+    if ($(this).is(':checked')) {
+      halfSpeed();
+    } else {
+      normalSpeed();
+    }
   });
 });
 /////////////////////////////////////////////////
