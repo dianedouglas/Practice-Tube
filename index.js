@@ -97,7 +97,7 @@ $(document).ready(function(){
 
   // attach click handlers to switches.
   $('.loopSwitch').click(function(){
-    console.log($(this).val());
+    debugger;
   });
   $('.speedSwitch').click(function(){
     console.log($(this).val());
