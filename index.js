@@ -96,10 +96,10 @@ $(document).ready(function(){
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
   // attach click handlers to switches.
-  $('.loopSwitch').click(function(){
+  $('.loopSwitch input').click(function(){
     debugger;
   });
-  $('.speedSwitch').click(function(){
+  $('.speedSwitch input').click(function(){
     console.log($(this).val());
   });
 });
