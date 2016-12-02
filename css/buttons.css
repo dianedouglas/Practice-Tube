@@ -27,9 +27,9 @@ h1:before,
 h1:after { content: " - " }
 .pane {
     display: block;
-    width: 363px;
+    /*width: 363px;*/
     text-align: center;
-    height: 220px;
+    /*height: 220px;*/
     padding: 10px;
     padding-left: 0px;
     margin: 10px auto;
@@ -151,4 +151,8 @@ span:hover>p {
 span.button {
     min-width: 90px;
     margin-top: 33px;
+}
+
+.viewer.pane {
+    padding-left: 10px;
 }
