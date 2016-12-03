@@ -13,7 +13,7 @@ h1,
 h2,
 h3,
 H4 {
-    font-family: helvetica;
+    /*font-family: helvetica;*/
     font-weight: bold;
     background-color: #333;
     /*background-clip*/
@@ -155,4 +155,21 @@ span.button {
 
 .viewer.pane {
     padding-left: 10px;
+}
+
+.videowrapper {
+    float: none;
+    clear: both;
+    width: 100%;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+}
+.videowrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
