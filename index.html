@@ -45,7 +45,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Home</a>
+                <a class="navbar-brand" href="index.html" style="padding-top: 0px;">
+                    <span class="glyphicon glyphicon-home" aria-hidden="true" style="margin-top: 15px; margin-right: 0px; margin-left: 0px;"></span>
+                </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -74,7 +76,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">Practice Tube
-                    <small>A Looper for YouTube Videos</small>
+                    <small>Practice Music with YouTube</small>
                 </h1>
             </div>
         </div>
@@ -95,19 +97,14 @@
                 </div>
 
                 <div class="col-md-4">
-                    <h3>Practice Music with Videos</h3>
-                    <p>Find a video you want to practice with, then loop the hard parts at half speed until you get it!</p>
+                    <h3>Loop Songs on YouTube</h3>
+                    <p>Loop the hard bits at half speed until you get it!</p>
                     <input id="find-videos" type="text">
                     <button id="search" type="submit">Go</button>
                     <div class="row pane">
-                        <!-- <div class="pane"> -->
                             <div class="col-xs-4">
                                 <span onclick="getLoopStartTime()" class="button"><p>Start Loop</p></span>
                                 <span class="button" onclick="back10()"><p>Rewind :10</p></span>
-                                <!-- <button onclick="startLooping()">Looping Go!</button>
-                                <button onclick="resumePlayback()">Resume Playback</button> -->
-    <!--                             <span class="button" onclick="halfSpeed()">Slow</span>
-                                <span class="button" onclick="normalSpeed()">Normal</span> -->
                             </div>
                             <div class="col-xs-4">
                                 <span onclick="getLoopEndTime()" class="button"><p>End Loop</p></span>
@@ -125,7 +122,6 @@
                                         <label></label>
                                     </div> 
                             </div>
-                        <!-- </div> -->
                     </div>
                     <div class="row">
                     </div>
