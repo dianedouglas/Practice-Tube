@@ -1,7 +1,5 @@
 @font-face {
     font-family: 'pictos';
-    src: url('http://web-gate.fr/fonts/websymbols-regular-webfont.ttf');
-    src: url('http://web-gate.fr/fonts/websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'), url('http://web-gate.fr/fonts/websymbols-regular-webfont.woff') format('woff'), url('http://web-gate.fr/fonts/websymbols-regular-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
