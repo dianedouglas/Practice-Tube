@@ -207,8 +207,11 @@ span.button {
 
 .pane p.label {
     color: #a1e1ff;
+    float: left;
+    margin-left: 13px;
+    
 }
-
+/*
 .switch {
     margin-top: 14px;
-}
+}*/
