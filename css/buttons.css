@@ -4,7 +4,7 @@
     font-style: normal;
 }
 body {
-    background: #00aeff;
+    background: rgba(0, 174, 255, .37);
     font-family: 'pictos';
 }
 h1,
