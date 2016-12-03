@@ -78,7 +78,9 @@ function normalSpeed(){
 //////////////////// ATTACH CLICK HANDLERS ON DOCUMENT READY ////////////////////
 $(document).ready(function(){
   // attach click handler to search button
-  $('#search').click(function(){
+  $('#search').submit(function(event){
+    debugger;
+    event.preventDefault();
     searchTerm = $('#find-videos').val();
     search(searchTerm);
   });
