@@ -148,7 +148,7 @@ span:hover>p {
 
 span.button {
     min-width: 90px;
-    margin-top: 33px;
+    /*margin-top: 33px;*/
 }
 
 .viewer.pane {
@@ -203,4 +203,12 @@ span.button {
 
 #custom-search-input .glyphicon-search{
     font-size: 23px;
+}
+
+.pane p.label {
+    color: #a1e1ff;
+}
+
+.switch {
+    margin-top: 14px;
 }
