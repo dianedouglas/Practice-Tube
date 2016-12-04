@@ -96,15 +96,19 @@ $(document).ready(function(){
   $('.loopSwitch input').click(function(){
     if ($(this).is(':checked')) {
       startLooping();
+      $(this).addClass('clicked');
     } else {
       resumePlayback();
+      $(this).removeClass('clicked');
     }
   });
   $('.speedSwitch input').click(function(){
     if ($(this).is(':checked')) {
       halfSpeed();
+      $(this).addClass('clicked');
     } else {
       normalSpeed();
+      $(this).removeClass('clicked');
     }
   });
 });

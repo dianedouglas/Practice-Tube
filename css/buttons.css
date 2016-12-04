@@ -141,6 +141,19 @@ span:hover>p {
     -o-transform: translateY(4px);
     transform: translateY(4px);
 }
+.clicked {
+    border-top: 0px solid #dde1e7;
+    /*box-shadow*/
+    -webkit-box-shadow: inset 0 1px 2px rgba(255,255,255,0.2), 0 1px 0 #2D2D2D, 0 2px 0 #2D2D2D, 0 3px 0 #2C2C2C, 0 4px 0 #2A2A2A, 0 0 0 6px black, 0 4px 0 6px black, 0 0 0 7px #222, 0 4px 0 7px #222,0px 0px 5px #00aeff,0px 0px 50px #00aeff,0px 0px 50px #93d9fa;
+    -moz-box-shadow: inset 0 1px 2px rgba(255,255,255,0.2), 0 1px 0 #2D2D2D, 0 2px 0 #2D2D2D, 0 3px 0 #2C2C2C, 0 4px 0 #2A2A2A, 0 0 0 6px black, 0 4px 0 6px black, 0 0 0 7px #222, 0 4px 0 7px #222,0px 0px 5px #00aeff,0px 0px 50px #00aeff,0px 0px 50px #93d9fa;
+    box-shadow: inset 0 1px 2px rgba(255,255,255,0.2), 0 1px 0 #2D2D2D, 0 2px 0 #2D2D2D, 0 3px 0 #2C2C2C, 0 4px 0 #2A2A2A, 0 0 0 6px black, 0 4px 0 6px black, 0 0 0 7px #222, 0 4px 0 7px #222,0px 0px 5px #00aeff,0px 0px 50px #00aeff,0px 0px 50px #93d9fa;
+    /*transform*/
+    -webkit-transform: translateY(4px);
+    -moz-transform: translateY(4px);
+    -ms-transform: translateY(4px);
+    -o-transform: translateY(4px);
+    transform: translateY(4px);
+}
 
 .button p {
     margin-bottom: 0px;
