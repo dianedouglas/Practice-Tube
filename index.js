@@ -14,7 +14,6 @@ var endTime;
 //////////////////// YOUTUBE IFRAME PLAYER & PLAYBACK FUNCTIONS ////////////////////
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('existing-iframe-example', {
-      playerVars: { playsinline: 1 },
       events: {
         'onReady': onPlayerReady,
         'onStateChange': onPlayerStateChange
