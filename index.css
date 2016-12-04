@@ -87,6 +87,6 @@
 
 @media only screen and (max-width: 1199px) {
     body {
-        background-color: red;
+        color: red;
     }
 }
