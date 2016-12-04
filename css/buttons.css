@@ -81,7 +81,7 @@ span:hover>p {
     background-image: linear-gradient(100% 100% 90deg, #515151, #7A7A7A);
     background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7A7A7A), to(#515151));
     border: none;
-    border-top: 3px solid #c2c2c2;
+    border-top: 2px solid #c2c2c2;
     /*border-radius*/
     -webkit-border-radius: 40px;
     -moz-border-radius: 40px;

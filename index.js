@@ -96,22 +96,22 @@ $(document).ready(function(){
   var halfOn = false;
   $('.loopSwitch').click(function(){
     if (!loopingOn) {
-      startLooping();
+      // startLooping();
       $(this).addClass('clicked');
       loopingOn = true;
     } else {
-      resumePlayback();
+      // resumePlayback();
       $(this).removeClass('clicked');
       loopingOn = false;
     }
   });
   $('.speedSwitch').click(function(){
     if (!halfOn) {
-      halfSpeed();
+      // halfSpeed();
       $(this).addClass('clicked');
       halfOn = true;
     } else {
-      normalSpeed();
+      // normalSpeed();
       $(this).removeClass('clicked');
       halfOn = false;
     }
