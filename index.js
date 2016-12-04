@@ -67,9 +67,11 @@ function onPlayerStateChange(event) {
   }
 }
 function halfSpeed(){
+  debugger;
   player.setPlaybackRate('.5');
 }
 function normalSpeed(){
+  debugger;
   player.setPlaybackRate('1');
 }
 /////////////////////////////////////////////////
