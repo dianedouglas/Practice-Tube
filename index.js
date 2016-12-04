@@ -9,6 +9,10 @@ var player;
 // these should be referenced from anywhere and changed from anywhere.
 var startTime;
 var endTime;
+
+// keeps track of state of looper and half speed on/off
+var loopingOn = false;
+var halfOn = false;
 /////////////////////////////////////////////////
 
 //////////////////// YOUTUBE IFRAME PLAYER & PLAYBACK FUNCTIONS ////////////////////
@@ -37,8 +41,9 @@ function startLooping() {
     'startSeconds': startTime,
     'endSeconds': endTime});
   player.playVideo();
-  if ($('.loopSwitch input').is(':checked') === false) {
-    $('.loopSwitch input').attr('checked','checked');
+  if ($('.loopSwitch').hasClass('clicked') === false) {
+    $('.loopSwitch').addClass('clicked');
+    loopingOn = true;
   };
 }
 function resumePlayback() {
@@ -67,11 +72,9 @@ function onPlayerStateChange(event) {
   }
 }
 function halfSpeed(){
-  debugger;
   player.setPlaybackRate('.5');
 }
 function normalSpeed(){
-  debugger;
   player.setPlaybackRate('1');
 }
 /////////////////////////////////////////////////
@@ -94,8 +97,6 @@ $(document).ready(function(){
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
   // attach click handlers to switches.
-  var loopingOn = false;
-  var halfOn = false;
   $('.loopSwitch').click(function(){
     if (!loopingOn) {
       startLooping();
