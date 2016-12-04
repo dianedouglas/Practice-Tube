@@ -1,6 +1,3 @@
-/*.post-auth {
-  display: none;
-}*/
 *,
   *:after,
   *:before {
@@ -88,10 +85,8 @@
         0 0 10px 2px rgba(0, 210, 0, 0.5);
 }
 
-/*.switch.speedSwitch {
-  margin-top: 32px;
-}*/
-
-/*.switch.loopSwitch {
-  margin-top: 19px;
-}*/
+@media only screen and (max-width: 1199px) {
+    body {
+        background-color: red;
+    }
+}
