@@ -98,19 +98,24 @@ $(document).ready(function(){
   $('.loopSwitch').click(function(){
     if (!loopingOn) {
       startLooping();
+      debugger;
       $(this).addClass('clicked');
+      loopingOn = true;
     } else {
       resumePlayback();
       $(this).removeClass('clicked');
+      loopingOn = false;
     }
   });
   $('.speedSwitch').click(function(){
     if (!halfOn) {
       halfSpeed();
       $(this).addClass('clicked');
+      halfOn = true;
     } else {
       normalSpeed();
       $(this).removeClass('clicked');
+      halfOn = false;
     }
   });
 });
