@@ -93,8 +93,10 @@ $(document).ready(function(){
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
   // attach click handlers to switches.
-  $('.loopSwitch input').click(function(){
-    if ($(this).is(':checked')) {
+  var loopingOn = false;
+  var halfOn = false;
+  $('.loopSwitch').click(function(){
+    if (!loopingOn) {
       startLooping();
       $(this).addClass('clicked');
     } else {
@@ -102,8 +104,8 @@ $(document).ready(function(){
       $(this).removeClass('clicked');
     }
   });
-  $('.speedSwitch input').click(function(){
-    if ($(this).is(':checked')) {
+  $('.speedSwitch').click(function(){
+    if (!halfOn) {
       halfSpeed();
       $(this).addClass('clicked');
     } else {
