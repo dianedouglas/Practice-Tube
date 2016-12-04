@@ -96,12 +96,11 @@ $(document).ready(function(){
   var halfOn = false;
   $('.loopSwitch').click(function(){
     if (!loopingOn) {
-      // startLooping();
-      debugger;
+      startLooping();
       $(this).addClass('clicked');
       loopingOn = true;
     } else {
-      // resumePlayback();
+      resumePlayback();
       $(this).removeClass('clicked');
       loopingOn = false;
     }
