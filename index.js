@@ -97,12 +97,12 @@ $(document).ready(function(){
   var halfOn = false;
   $('.loopSwitch').click(function(){
     if (!loopingOn) {
-      startLooping();
+      // startLooping();
       debugger;
       $(this).addClass('clicked');
       loopingOn = true;
     } else {
-      resumePlayback();
+      // resumePlayback();
       $(this).removeClass('clicked');
       loopingOn = false;
     }
