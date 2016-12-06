@@ -148,6 +148,7 @@ function search(query, pageToken) {
 
 // Display results of search and pagers.
 function onSearchResponse(response) {
+    $("html, body").animate({ scrollTop: $(document).height() }, "slow");
     $('#results').empty();
     var rowCounter = -1;
     $('#results').append('<div class="row">');
