@@ -86,9 +86,7 @@
 }
 
 @media only screen and (max-width: 1199px) {
-    body {
         .videowrapper.pane {
             height: 432px;
         }
-    }
 }
