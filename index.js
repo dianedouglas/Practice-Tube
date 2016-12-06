@@ -152,7 +152,9 @@ function search(query, pageToken) {
 function onSearchResponse(response) {
     if (!loading) {      
       $("html, body").animate({ scrollTop: $(document).height() }, "slow");
-    };
+    } else {
+      loading = false;
+    }
     $('#results').empty();
     var rowCounter = -1;
     $('#results').append('<div class="row">');
