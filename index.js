@@ -166,7 +166,7 @@ function onSearchResponse(response) {
           $('.videoThumb').last().click(function(){
             var videoIdToPlay = $(this).attr('id');
             loadVideoById(videoIdToPlay);
-            $("html, body").animate({ scrollTop: 0 }, "slow");
+            $("html, body").animate({ scrollTop: 5 }, "slow");
           });
         } else { // if we've reached the end of a row
           // reset counter to 0.
@@ -182,7 +182,7 @@ function onSearchResponse(response) {
           $('.videoThumb').last().click(function(){
             var videoIdToPlay = $(this).attr('id');
             loadVideoById(videoIdToPlay);
-            $("html, body").animate({ scrollTop: 0 }, "slow");
+            $("html, body").animate({ scrollTop: 5 }, "slow");
           });
         };
       };
