@@ -86,6 +86,7 @@ $(document).ready(function(){
   $('#search').submit(function(event){
     event.preventDefault();
     searchTerm = $('#find-videos').val();
+    $("html, body").animate({ scrollTop: $(document).height() }, "slow");
     search(searchTerm);
   });
 
