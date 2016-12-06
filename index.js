@@ -13,8 +13,6 @@ var endTime;
 // keeps track of state of looper and half speed on/off
 var loopingOn = false;
 var halfOn = false;
-
-var loading = true;
 /////////////////////////////////////////////////
 
 //////////////////// YOUTUBE IFRAME PLAYER & PLAYBACK FUNCTIONS ////////////////////
@@ -150,12 +148,6 @@ function search(query, pageToken) {
 
 // Display results of search and pagers.
 function onSearchResponse(response) {
-    if (!loading) {      
-      $("html, body").animate({ scrollTop: $(document).height() }, "slow");
-    } else {
-      loading = false;
-    }
-
     $('#results').empty();
     var rowCounter = -1;
     $('#results').append('<div class="row">');
