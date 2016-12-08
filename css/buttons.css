@@ -224,6 +224,9 @@ span.button {
     margin-left: 13px;
     
 }
+.pane.controls {
+    height: 288px;
+}
 .mobile {
     display: none;
 }
