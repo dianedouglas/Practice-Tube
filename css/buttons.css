@@ -161,6 +161,7 @@ span:hover>p {
 
 span.button {
     min-width: 90px;
+    margin-left: 35px;
     /*margin-top: 33px;*/
 }
 
@@ -228,3 +229,21 @@ span.button {
 .switch {
     margin-top: 14px;
 }*/
+
+@media only screen and (max-width: 1199px) {
+    .videowrapper.pane {
+        height: 432px;
+    }
+    .pane.controls {
+        height: 272px;
+    }
+    span.button {
+        margin-left: 20px;
+    }
+}
+@media only screen and (max-width: 991px) {
+    span.button {
+        min-width: 220px;
+        margin-left: 65px;
+    }
+}

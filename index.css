@@ -88,12 +88,3 @@
 .pane.controls {
     height: 288px;
 }
-
-@media only screen and (max-width: 1199px) {
-    .videowrapper.pane {
-        height: 432px;
-    }
-    .pane.controls {
-        height: 272px;
-    }
-}
