@@ -68,7 +68,7 @@
     <!-- Page Content -->
     <div class="container">
 
-    <div id="login-container" class="pre-auth">In order to search videos, this app needs you to login to your YouTube account. I promise I won't do anything with your information, ok?
+    <div id="login-container" class="pre-auth desktop">In order to search videos, this app needs you to login to your YouTube account. I promise I won't do anything with your information, ok?
       Please <a href="#" id="login-link">authorize</a> to continue.
     </div>
 
@@ -82,7 +82,6 @@
         </div>
         <!-- /.row -->
 
-        <div class="post-auth">
 
             <!-- Portfolio Item Row -->
             <div class="row">
@@ -98,8 +97,11 @@
 
                 <div class="col-md-4">
                     <h3>Loop Songs on YouTube</h3>
-                    <p>Loop the hard bits at half speed until you get it!</p>
-                    <form id="search">
+                    <p class="slogan">Loop the hard bits at half speed until you get it!</p>
+                    <div class="mobile">
+                        <p>This app has not yet been ported to mobile, but in the meantime, check out the demo video and use this to your heart's content on your desktop. </p>
+                    </div>
+                    <form class="desktop" id="search">
                         <div id="custom-search-input">
                             <div class="input-group col-md-12">
                                 <input type="text" id="find-videos" class="form-control input-lg" placeholder="Iron Maiden" />
@@ -110,65 +112,8 @@
                                 </span>
                             </div>
                         </div>
-                    </form>
-<!--                     <div class="row pane">
-                            <div class="col-xs-4">
-                                <p class="label">Loop Points</p>
-                                <span onclick="getLoopStartTime()" class="button leftbutton"><p>Start Loop</p></span>
-                                <p class="label">Transport</p>
-                                <span class="button leftbutton" onclick="back10()"><p>Rewind :10</p></span>
-                            </div>
-                            <div class="col-xs-4">
-                                <span style="margin-top: 39px;" onclick="getLoopEndTime()" class="button rightbutton"><p>End Loop</p></span>
-                                <span style="margin-top: 39px;" class="button rightbutton" onclick="back30()"><p>Rewind :30</p></span>
-                            </div>
-                            <div class="col-xs-4 toggles">
-                                    <p class="label">Loop On/Off</p>
-                                    <div class="switch loopSwitch">
-                                        <input type="checkbox">
-                                        <label></label>
-                                    </div> 
-                                    <p class="label">Half Speed</p>
-                                    <div class="switch speedSwitch">
-                                        <input type="checkbox">
-                                        <label></label>
-                                    </div> 
-                            </div>
-                    </div> -->
-                   <!--  <div class="pane">
-                        <div class="row">
-                            <div class="col-xs-4">
-                                <span onclick="getLoopStartTime()" class="button leftbutton"><p>Start Loop</p></span>
-                            </div>
-                            <div class="col-xs-4">
-                                <span style="margin-top: 39px;" onclick="getLoopEndTime()" class="button rightbutton"><p>End Loop</p></span>
-                            </div>
-                            <div class="col-xs-4">
-                                <p class="label">Loop On/Off</p>
-                                <div class="switch loopSwitch">
-                                    <input type="checkbox">
-                                    <label></label>
-                                </div> 
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-4">
-                                <span class="button leftbutton" onclick="back10()"><p>Rewind :10</p></span>
-                            </div>
-                            <div class="col-xs-4">
-                                <span style="margin-top: 39px;" class="button rightbutton" onclick="back30()"><p>Rewind :30</p></span>
-                            </div>
-                            <div class="col-xs-4">
-                                <p class="label">Half Speed</p>
-                                <div class="switch speedSwitch">
-                                    <input type="checkbox">
-                                    <label></label>
-                                </div> 
-                            </div>
-                        </div>
-                    </div> -->
-                
-                    <div class="pane controls">
+                    </form>                
+                    <div class="pane controls desktop">
                         <div class="row">
                             <div class="col-xs-6 text-center">
                                 <span onclick="getLoopStartTime()" class="button leftbutton"><p>Start Loop</p></span>
@@ -217,7 +162,7 @@
             <!-- /.row -->
 
             <!-- Related Projects Row -->
-            <div class="row">
+            <div class="row desktop">
 
                 <div class="col-lg-12">
                     <h3 class="page-header">Results</h3>
@@ -227,7 +172,6 @@
                 </div>
             </div>
             <div id="pager"></div>
-        </div>
             <!-- /.row -->
 
     <!-- </div> -->

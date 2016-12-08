@@ -162,7 +162,6 @@ span:hover>p {
 span.button {
     min-width: 90px;
     margin-left: 35px;
-    /*margin-top: 33px;*/
 }
 
 .viewer.pane {
@@ -225,11 +224,12 @@ span.button {
     margin-left: 13px;
     
 }
-/*
-.switch {
-    margin-top: 14px;
-}*/
-
+.mobile {
+    display: none;
+}
+.slogan {
+    font-style: italic;
+}
 @media only screen and (max-width: 1199px) {
     .videowrapper.pane {
         height: 432px;
@@ -251,6 +251,13 @@ span.button {
     span.button {
         min-width: 90px;
         margin-left: 35px;
-        /*margin-top: 33px;*/
+    }
+}
+@media only screen and (max-device-width: 480px) {
+    .desktop {
+        display: none;
+    }
+    .mobile {
+        display: block;
     }
 }
