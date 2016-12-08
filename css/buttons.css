@@ -255,6 +255,9 @@ span.button {
         min-width: 90px;
         margin-left: 35px;
     }
+    .page-header {
+        margin-top: 80px;
+    }
 }
 @media only screen and (max-device-width: 480px) {
     .desktop {
