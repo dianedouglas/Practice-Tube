@@ -247,3 +247,10 @@ span.button {
         margin-left: 65px;
     }
 }
+@media only screen and (max-width: 768px) {
+    span.button {
+        min-width: 90px;
+        margin-left: 35px;
+        /*margin-top: 33px;*/
+    }
+}
