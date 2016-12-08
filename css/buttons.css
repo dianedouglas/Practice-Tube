@@ -230,6 +230,9 @@ span.button {
 .mobile {
     display: none;
 }
+.collapsed {
+    display: none;
+}
 .slogan {
     font-style: italic;
 }
@@ -258,12 +261,21 @@ span.button {
     .page-header {
         margin-top: 80px;
     }
+    .collapsed {
+        display: block;
+    }
+    .not-collapsed {
+        display: none;
+    }
 }
 @media only screen and (max-device-width: 480px) {
     .desktop {
         display: none;
     }
     .mobile {
+        display: block;
+    }
+    .collapsed {
         display: block;
     }
 }
