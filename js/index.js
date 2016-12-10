@@ -263,15 +263,10 @@ function onSearchResponse(response) {
   }
 
   // Load the client interfaces for the YouTube Data API if auth successful.
-  // function loadAPIClientInterfaces() {
-  //   gapi.client.load('youtube', 'v3', function() {
-  //       search('lord of the rings');
-  //   });
-  // }
-
-  window.loadAPIClientInterfaces = function(){
+  function loadAPIClientInterfaces() {
     gapi.client.load('youtube', 'v3', function() {
         search('lord of the rings');
     });
   }
+
 })();
