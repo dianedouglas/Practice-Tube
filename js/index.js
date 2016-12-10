@@ -269,7 +269,7 @@ function onSearchResponse(response) {
   //   });
   // }
 
-  window.loadAPIClientInterfaces() {
+  window.loadAPIClientInterfaces = function(){
     gapi.client.load('youtube', 'v3', function() {
         search('lord of the rings');
     });
