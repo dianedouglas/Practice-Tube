@@ -206,68 +206,68 @@ function onSearchResponse(response) {
 /////////////////////////////////////////////////
 
 //////////////////// AUTH & LOAD YOUTUBE API WHEN PAGE LOADS ////////////////////
-// (function() {
-//   // set up youtube data api info
-//   var OAUTH2_CLIENT_ID = '1070803394366-and4mdf2i6p63bql38m81klajnshep25.apps.googleusercontent.com';
-//   var OAUTH2_SCOPES = [
-//     'https://www.googleapis.com/auth/youtube.readonly'
-//   ];
+(function() {
+  // set up youtube data api info
+  var OAUTH2_CLIENT_ID = '1070803394366-and4mdf2i6p63bql38m81klajnshep25.apps.googleusercontent.com';
+  var OAUTH2_SCOPES = [
+    'https://www.googleapis.com/auth/youtube.readonly'
+  ];
 
-//   // Upon loading, the Google APIs JS client automatically invokes this callback.
-//   // See https://developers.google.com/api-client-library/javascript/features/authentication 
-//   window.onJSClientLoad = function() {
-//     gapi.auth.init(function() {
-//       window.setTimeout(checkAuth, 1);
-//     });
-//   };
+  // Upon loading, the Google APIs JS client automatically invokes this callback.
+  // See https://developers.google.com/api-client-library/javascript/features/authentication 
+  window.onJSClientLoad = function() {
+    gapi.auth.init(function() {
+      window.setTimeout(checkAuth, 1);
+    });
+  };
 
-//   // Attempt the immediate OAuth 2.0 client flow as soon as the page loads.
-//   // If the currently logged-in Google Account has previously authorized
-//   // the client specified as the OAUTH2_CLIENT_ID, then the authorization
-//   // succeeds with no user intervention. Otherwise, it fails and the
-//   // user interface that prompts for authorization needs to display.
-//   function checkAuth() {
-//     gapi.auth.authorize({
-//       client_id: OAUTH2_CLIENT_ID,
-//       scope: OAUTH2_SCOPES,
-//       immediate: false
-//     }, handleAuthResult);
-//   }
+  // Attempt the immediate OAuth 2.0 client flow as soon as the page loads.
+  // If the currently logged-in Google Account has previously authorized
+  // the client specified as the OAUTH2_CLIENT_ID, then the authorization
+  // succeeds with no user intervention. Otherwise, it fails and the
+  // user interface that prompts for authorization needs to display.
+  function checkAuth() {
+    gapi.auth.authorize({
+      client_id: OAUTH2_CLIENT_ID,
+      scope: OAUTH2_SCOPES,
+      immediate: false
+    }, handleAuthResult);
+  }
 
-//   // Handle the result of a gapi.auth.authorize() call.
-//   function handleAuthResult(authResult) {
-//     if (authResult) {
-//       // Authorization was successful. Hide authorization prompts and show
-//       // content that should be visible after authorization succeeds.
-//       $('.pre-auth').hide();
-//       $('.post-auth').show();
+  // Handle the result of a gapi.auth.authorize() call.
+  function handleAuthResult(authResult) {
+    if (authResult) {
+      // Authorization was successful. Hide authorization prompts and show
+      // content that should be visible after authorization succeeds.
+      $('.pre-auth').hide();
+      $('.post-auth').show();
 
-//       loadAPIClientInterfaces();
-//     } else {
-//       // Authorization was unsuccessful. Show content related to prompting for
-//       // authorization and hide content that should be visible if authorization
-//       // succeeds.
-//       $('.post-auth').hide();
-//       $('.pre-auth').show();
+      loadAPIClientInterfaces();
+    } else {
+      // Authorization was unsuccessful. Show content related to prompting for
+      // authorization and hide content that should be visible if authorization
+      // succeeds.
+      $('.post-auth').hide();
+      $('.pre-auth').show();
 
-//       // Make the #login-link clickable. Attempt a non-immediate OAuth 2.0
-//       // client flow. The current function is called when that flow completes.
-//       $('#login-link').click(function() {
-//         gapi.auth.authorize({
-//           client_id: OAUTH2_CLIENT_ID,
-//           scope: OAUTH2_SCOPES,
-//           immediate: false
-//         }, handleAuthResult);
-//       });
-//     }
-//   }
+      // Make the #login-link clickable. Attempt a non-immediate OAuth 2.0
+      // client flow. The current function is called when that flow completes.
+      $('#login-link').click(function() {
+        gapi.auth.authorize({
+          client_id: OAUTH2_CLIENT_ID,
+          scope: OAUTH2_SCOPES,
+          immediate: false
+        }, handleAuthResult);
+      });
+    }
+  }
 
-//   // Load the client interfaces for the YouTube Data API if auth successful.
-//   // https://developers.google.com/api-client-library/javascript/dev/dev_jscript#loading-the-client-library-and-the-api
-
-// })();
+  // Load the client interfaces for the YouTube Data API if auth successful.
+  // https://developers.google.com/api-client-library/javascript/dev/dev_jscript#loading-the-client-library-and-the-api
   function loadAPIClientInterfaces() {
     gapi.client.load('youtube', 'v3', function() {
         search('lord of the rings');
     });
   }
+
+})();
