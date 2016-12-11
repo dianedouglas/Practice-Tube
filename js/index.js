@@ -41,16 +41,18 @@ function startLooping() {
     'startSeconds': startTime,
     'endSeconds': endTime});
   player.playVideo();
-  debugger;
+  setPlaybackRate();
+  if ($('.loopSwitch').hasClass('clicked') === false) {
+    $('.loopSwitch').addClass('clicked');
+    loopingOn = true;
+  };
+}
+function setPlaybackRate() {
   if (halfOn) {
     player.setPlaybackRate('.5');
   } else {
     player.setPlaybackRate('1');
   }
-  if ($('.loopSwitch').hasClass('clicked') === false) {
-    $('.loopSwitch').addClass('clicked');
-    loopingOn = true;
-  };
 }
 function resumePlayback() {
   var duration = player.getDuration();
@@ -60,6 +62,7 @@ function resumePlayback() {
     'startSeconds': currentTime,
     'endSeconds': duration});
   player.playVideo();
+  setPlaybackRate();
 }
 function back10() {
   var currentTime = player.getCurrentTime();
@@ -76,12 +79,6 @@ function onPlayerStateChange(event) {
   if (event.data == 0) {
     startLooping();
   }
-}
-function halfSpeed(){
-  player.setPlaybackRate('.5');
-}
-function normalSpeed(){
-  player.setPlaybackRate('1');
 }
 /////////////////////////////////////////////////
 
@@ -117,13 +114,13 @@ $(document).ready(function(){
   });
   $('.speedSwitch').click(function(){
     if (!halfOn) {
-      halfSpeed();
       $(this).addClass('clicked');
       halfOn = true;
+      setPlaybackRate();
     } else {
-      normalSpeed();
       $(this).removeClass('clicked');
       halfOn = false;
+      setPlaybackRate();
     }
   });
 });
