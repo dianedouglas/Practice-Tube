@@ -41,10 +41,11 @@ function startLooping() {
     'startSeconds': startTime,
     'endSeconds': endTime});
   player.playVideo();
+  debugger;
   if (halfOn) {
-    halfSpeed();
+    player.setPlaybackRate('.5');
   } else {
-    normalSpeed();
+    player.setPlaybackRate('1');
   }
   if ($('.loopSwitch').hasClass('clicked') === false) {
     $('.loopSwitch').addClass('clicked');
