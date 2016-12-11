@@ -41,6 +41,11 @@ function startLooping() {
     'startSeconds': startTime,
     'endSeconds': endTime});
   player.playVideo();
+  if (halfOn) {
+    halfSpeed();
+  } else {
+    normalSpeed();
+  }
   if ($('.loopSwitch').hasClass('clicked') === false) {
     $('.loopSwitch').addClass('clicked');
     loopingOn = true;
