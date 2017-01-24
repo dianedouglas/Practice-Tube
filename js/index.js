@@ -164,7 +164,7 @@ function onSearchResponse(response) {
           var currentVideoId = video.id.videoId;
           var url = video.snippet.thumbnails.medium.url;
           var imgTag = '<img class="img-responsive portfolio-item" src="' + url +'">';
-          var imgPlusDivWithId = '<div class="col-sm-3 col-xs-6 videoThumb" id="' + currentVideoId + '">' + imgTag + '</div>';
+          var imgPlusDivWithId = '<div class="col-sm-3 col-xs-6 videoThumb" id="' + currentVideoId + '">' + imgTag + '<p>' + video.snippet.title + '</p>' + '</div>';
           $('#results').append(imgPlusDivWithId);
           $('.videoThumb').last().click(function(){
             var videoIdToPlay = $(this).attr('id');
@@ -180,7 +180,7 @@ function onSearchResponse(response) {
           var currentVideoId = video.id.videoId;
           var url = video.snippet.thumbnails.medium.url;
           var imgTag = '<img class="img-responsive portfolio-item" src="' + url +'">';
-          var imgPlusDivWithId = '<div class="col-sm-3 col-xs-6 videoThumb" id="' + currentVideoId + '">' + imgTag + '</div>';
+          var imgPlusDivWithId = '<div class="col-sm-3 col-xs-6 videoThumb" id="' + currentVideoId + '">' + imgTag + '<p>' + video.snippet.title + '</p>' + '</div>';
           $('#results').append(imgPlusDivWithId);
           $('.videoThumb').last().click(function(){
             var videoIdToPlay = $(this).attr('id');
