@@ -6,7 +6,7 @@
 
 ## Description
 
-#### [Practice Tube](dianedouglas.github.io/Practice-Tube)
+#### [Practice Tube](https://dianedouglas.github.io/Practice-Tube)
 
 This app allows you to loop parts of YouTube videos at half speed to make it easier to learn your favorite songs on your instrument. 
 
