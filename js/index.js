@@ -137,7 +137,7 @@ function search(query, pageToken) {
         maxResults: 8,
         type: 'video'
     });
-  }else {    
+  } else {    
     var request = gapi.client.youtube.search.list({
         part: 'snippet',
         q: query,
@@ -156,40 +156,44 @@ function onSearchResponse(response) {
     var rowCounter = -1;
     $('#results').append('<div class="row">');
     console.log(response.items);
-    response.items.forEach(function(video){
-      // if we're inside a row
-      if (video.id.videoId) { //don't show channels etc.
-        rowCounter++;
-        if (rowCounter < 4) {
-          var currentVideoId = video.id.videoId;
-          var url = video.snippet.thumbnails.medium.url;
-          var imgTag = '<img class="img-responsive portfolio-item" src="' + url +'">';
-          var imgPlusDivWithId = '<div class="col-sm-3 col-xs-6 videoThumb" id="' + currentVideoId + '">' + imgTag + '<p>' + video.snippet.title + '</p>' + '</div>';
-          $('#results').append(imgPlusDivWithId);
-          $('.videoThumb').last().click(function(){
-            var videoIdToPlay = $(this).attr('id');
-            loadVideoById(videoIdToPlay);
-            $("html, body").animate({ scrollTop: 15 }, "slow");
-          });
-        } else { // if we've reached the end of a row
-          // reset counter to 0.
-          rowCounter = 0;
-          // add a closing row div, start new one.
-          $('#results').append('</div>');
-          $('#results').append('<div class="row">');
-          var currentVideoId = video.id.videoId;
-          var url = video.snippet.thumbnails.medium.url;
-          var imgTag = '<img class="img-responsive portfolio-item" src="' + url +'">';
-          var imgPlusDivWithId = '<div class="col-sm-3 col-xs-6 videoThumb" id="' + currentVideoId + '">' + imgTag + '<p>' + video.snippet.title + '</p>' + '</div>';
-          $('#results').append(imgPlusDivWithId);
-          $('.videoThumb').last().click(function(){
-            var videoIdToPlay = $(this).attr('id');
-            loadVideoById(videoIdToPlay);
-            $("html, body").animate({ scrollTop: 15 }, "slow");
-          });
+    if (typeof response.items !== 'undefined') {
+      response.items.forEach(function(video){
+        // if we're inside a row
+        if (video.id.videoId) { //don't show channels etc.
+          rowCounter++;
+          if (rowCounter < 4) {
+            var currentVideoId = video.id.videoId;
+            var url = video.snippet.thumbnails.medium.url;
+            var imgTag = '<img class="img-responsive portfolio-item" src="' + url +'">';
+            var imgPlusDivWithId = '<div class="col-sm-3 col-xs-6 videoThumb" id="' + currentVideoId + '">' + imgTag + '<p>' + video.snippet.title + '</p>' + '</div>';
+            $('#results').append(imgPlusDivWithId);
+            $('.videoThumb').last().click(function(){
+              var videoIdToPlay = $(this).attr('id');
+              loadVideoById(videoIdToPlay);
+              $("html, body").animate({ scrollTop: 15 }, "slow");
+            });
+          } else { // if we've reached the end of a row
+            // reset counter to 0.
+            rowCounter = 0;
+            // add a closing row div, start new one.
+            $('#results').append('</div>');
+            $('#results').append('<div class="row">');
+            var currentVideoId = video.id.videoId;
+            var url = video.snippet.thumbnails.medium.url;
+            var imgTag = '<img class="img-responsive portfolio-item" src="' + url +'">';
+            var imgPlusDivWithId = '<div class="col-sm-3 col-xs-6 videoThumb" id="' + currentVideoId + '">' + imgTag + '<p>' + video.snippet.title + '</p>' + '</div>';
+            $('#results').append(imgPlusDivWithId);
+            $('.videoThumb').last().click(function(){
+              var videoIdToPlay = $(this).attr('id');
+              loadVideoById(videoIdToPlay);
+              $("html, body").animate({ scrollTop: 15 }, "slow");
+            });
+          };
         };
-      };
-    });
+      });
+    } else {
+      console.log(response);
+    }
     $('#pager').empty();
     if (response.prevPageToken) {
       $('#pager').append('<a class="prev" id="' + response.prevPageToken + '">Prev</a> | ')
